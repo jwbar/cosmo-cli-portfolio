@@ -59,18 +59,6 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background relative overflow-hidden">
-      {/* Floating cosmic elements */}
-      <div className="fixed inset-0 pointer-events-none">
-        <div className="absolute top-20 left-10 text-primary/20 rotate animate-spin-slow">
-          <Satellite size={20} />
-        </div>
-        <div className="absolute top-40 right-20 text-accent/20 float">
-          <Rocket size={16} />
-        </div>
-        <div className="absolute bottom-40 left-20 text-cosmo-cyan/20 cosmic-float">
-          <Monitor size={18} />
-        </div>
-      </div>
 
       {/* Header */}
       <header className="fixed top-0 w-full bg-background/80 backdrop-blur-sm border-b border-border z-50">
@@ -98,11 +86,8 @@ const Index = () => {
                     <img
                       src="/lovable-uploads/ec5f9a66-2521-496f-a030-a5f26e0fb057.png"
                       alt="Jay William Barros"
-                      className="w-48 h-48 rounded-full border-4 border-primary pulse-glow object-cover"
+                      className="w-48 h-48 rounded-full border-2 border-primary/50 object-cover professional-hover"
                     />
-                    <div className="absolute -top-2 -right-2 text-secondary animate-pulse">
-                      <Rocket size={24} />
-                    </div>
                   </div>
                 </div>
                 
@@ -175,16 +160,15 @@ const Index = () => {
                       <h3 className="font-mono text-lg font-semibold">{t('skills.languages')}</h3>
                     </div>
                     <div className="flex flex-wrap gap-2">
-                      {skills.languages.map((skill, index) => (
-                        <Badge 
-                          key={skill} 
-                          variant="secondary" 
-                          className="font-mono animate-pulse"
-                          style={{ animationDelay: `${index * 0.1}s` }}
-                        >
-                          {skill}
-                        </Badge>
-                      ))}
+                       {skills.languages.map((skill, index) => (
+                         <Badge 
+                           key={skill} 
+                           variant="secondary" 
+                           className="font-mono"
+                         >
+                           {skill}
+                         </Badge>
+                       ))}
                     </div>
                   </Card>
 
@@ -194,56 +178,53 @@ const Index = () => {
                       <h3 className="font-mono text-lg font-semibold">{t('skills.frameworks')}</h3>
                     </div>
                     <div className="flex flex-wrap gap-2">
-                      {skills.frameworks.map((skill, index) => (
-                        <Badge 
-                          key={skill} 
-                          variant="outline" 
-                          className="font-mono border-accent/50 animate-pulse"
-                          style={{ animationDelay: `${index * 0.1}s` }}
-                        >
-                          {skill}
-                        </Badge>
-                      ))}
+                       {skills.frameworks.map((skill, index) => (
+                         <Badge 
+                           key={skill} 
+                           variant="outline" 
+                           className="font-mono border-accent/50"
+                         >
+                           {skill}
+                         </Badge>
+                       ))}
                     </div>
                   </Card>
 
-                  <Card className="bg-muted/50 border-cosmo-cyan/30 p-6">
-                    <div className="flex items-center gap-2 mb-4">
-                      <Database className="text-cosmo-cyan" size={20} />
-                      <h3 className="font-mono text-lg font-semibold">{t('skills.databases')}</h3>
-                    </div>
-                    <div className="flex flex-wrap gap-2">
-                      {skills.databases.map((skill, index) => (
-                        <Badge 
-                          key={skill} 
-                          variant="secondary" 
-                          className="font-mono bg-cosmo-cyan/20 animate-pulse"
-                          style={{ animationDelay: `${index * 0.1}s` }}
-                        >
-                          {skill}
-                        </Badge>
-                      ))}
-                    </div>
-                  </Card>
+                   <Card className="bg-muted/50 border-professional-cyan/30 p-6 professional-hover">
+                     <div className="flex items-center gap-2 mb-4">
+                       <Database className="text-professional-cyan" size={20} />
+                       <h3 className="font-mono text-lg font-semibold">{t('skills.databases')}</h3>
+                     </div>
+                     <div className="flex flex-wrap gap-2">
+                       {skills.databases.map((skill, index) => (
+                         <Badge 
+                           key={skill} 
+                           variant="secondary" 
+                           className="font-mono"
+                         >
+                           {skill}
+                         </Badge>
+                       ))}
+                     </div>
+                   </Card>
 
-                  <Card className="bg-muted/50 border-cosmo-orange/30 p-6">
-                    <div className="flex items-center gap-2 mb-4">
-                      <Monitor className="text-cosmo-orange" size={20} />
-                      <h3 className="font-mono text-lg font-semibold">Tools & Platforms</h3>
-                    </div>
-                    <div className="flex flex-wrap gap-2">
-                      {skills.tools.map((skill, index) => (
-                        <Badge 
-                          key={skill} 
-                          variant="outline" 
-                          className="font-mono border-cosmo-orange/50 animate-pulse"
-                          style={{ animationDelay: `${index * 0.1}s` }}
-                        >
-                          {skill}
-                        </Badge>
-                      ))}
-                    </div>
-                  </Card>
+                   <Card className="bg-muted/50 border-professional-orange/30 p-6 professional-hover">
+                     <div className="flex items-center gap-2 mb-4">
+                       <Monitor className="text-professional-orange" size={20} />
+                       <h3 className="font-mono text-lg font-semibold">Tools & Platforms</h3>
+                     </div>
+                     <div className="flex flex-wrap gap-2">
+                       {skills.tools.map((skill, index) => (
+                         <Badge 
+                           key={skill} 
+                           variant="outline" 
+                           className="font-mono border-professional-orange/50"
+                         >
+                           {skill}
+                         </Badge>
+                       ))}
+                     </div>
+                   </Card>
                 </div>
               </div>
             </TerminalWindow>

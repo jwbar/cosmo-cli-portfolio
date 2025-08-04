@@ -56,11 +56,11 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				cosmo: {
-					orange: 'hsl(var(--cosmo-orange))',
-					purple: 'hsl(var(--cosmo-purple))',
-					cyan: 'hsl(var(--cosmo-cyan))',
-					yellow: 'hsl(var(--cosmo-yellow))',
+				professional: {
+					orange: 'hsl(var(--professional-orange))',
+					purple: 'hsl(var(--professional-purple))',
+					cyan: 'hsl(var(--professional-cyan))',
+					yellow: 'hsl(var(--professional-yellow))',
 				}
 			},
 			borderRadius: {

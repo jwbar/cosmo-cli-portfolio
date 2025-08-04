@@ -8,55 +8,55 @@
 
 @layer base {
   :root {
-    /* Terminal Dark Theme - Cosmonaut Edition */
-    --background: 220 15% 8%;
-    --foreground: 120 100% 85%;
+    /* Professional Terminal Theme */
+    --background: 220 20% 6%;
+    --foreground: 210 20% 90%;
 
-    --card: 220 15% 10%;
-    --card-foreground: 120 100% 85%;
+    --card: 220 20% 8%;
+    --card-foreground: 210 20% 90%;
 
-    --popover: 220 15% 12%;
-    --popover-foreground: 120 100% 85%;
+    --popover: 220 20% 10%;
+    --popover-foreground: 210 20% 90%;
 
-    /* Cosmic Primary - Electric Blue */
-    --primary: 197 100% 65%;
-    --primary-foreground: 220 15% 8%;
+    /* Professional Primary - Subtle Blue */
+    --primary: 210 50% 60%;
+    --primary-foreground: 220 20% 8%;
 
-    /* Terminal Green - Matrix Style */
-    --secondary: 120 100% 70%;
-    --secondary-foreground: 220 15% 8%;
+    /* Professional Secondary - Muted Green */
+    --secondary: 150 30% 65%;
+    --secondary-foreground: 220 20% 8%;
 
-    --muted: 220 15% 15%;
-    --muted-foreground: 120 60% 60%;
+    --muted: 220 20% 12%;
+    --muted-foreground: 210 15% 65%;
 
-    /* Cosmic Accent - Neon Purple */
-    --accent: 270 100% 70%;
-    --accent-foreground: 220 15% 8%;
+    /* Professional Accent - Elegant Purple */
+    --accent: 250 40% 65%;
+    --accent-foreground: 220 20% 8%;
 
-    /* Warning/Error - Neon Orange */
-    --destructive: 15 100% 65%;
-    --destructive-foreground: 220 15% 8%;
+    /* Professional Destructive */
+    --destructive: 0 50% 60%;
+    --destructive-foreground: 220 20% 8%;
 
-    --border: 120 40% 25%;
-    --input: 220 15% 15%;
-    --ring: 197 100% 65%;
+    --border: 220 20% 20%;
+    --input: 220 20% 12%;
+    --ring: 210 50% 60%;
 
-    --radius: 0.25rem;
+    --radius: 0.375rem;
 
-    /* Custom Cosmonaut Colors */
-    --cosmo-orange: 25 100% 60%;
-    --cosmo-purple: 270 100% 70%;
-    --cosmo-cyan: 180 100% 70%;
-    --cosmo-yellow: 55 100% 70%;
+    /* Professional Colors */
+    --professional-orange: 25 60% 55%;
+    --professional-purple: 250 40% 65%;
+    --professional-cyan: 180 40% 65%;
+    --professional-yellow: 45 70% 60%;
     
-    /* Terminal Effects */
-    --terminal-glow: 0 0 20px hsl(var(--primary) / 0.5);
-    --text-glow: 0 0 10px hsl(var(--secondary) / 0.8);
-    --scan-line: linear-gradient(transparent 50%, hsla(120, 100%, 85%, 0.03) 50%);
+    /* Subtle Effects */
+    --terminal-glow: 0 2px 8px hsl(var(--primary) / 0.15);
+    --text-glow: none;
+    --scan-line: none;
     
-    /* Gradients */
-    --gradient-cosmic: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--cosmo-purple)));
-    --gradient-matrix: linear-gradient(180deg, hsl(var(--secondary)), hsl(var(--cosmo-cyan)));
+    /* Professional Gradients */
+    --gradient-cosmic: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+    --gradient-matrix: linear-gradient(180deg, hsl(var(--secondary)), hsl(var(--professional-cyan)));
     --gradient-terminal: linear-gradient(45deg, hsl(var(--background)), hsl(var(--muted)));
 
     --radius: 0.25rem;
@@ -92,18 +92,11 @@
 
   body {
     @apply bg-background text-foreground font-mono;
-    background-image: var(--scan-line);
-    background-size: 100% 4px;
-    animation: scanlines 0.1s linear infinite;
   }
 
-  /* Terminal glow effect */
+  /* Subtle terminal glow effect */
   .terminal-glow {
     box-shadow: var(--terminal-glow);
-  }
-
-  .text-glow {
-    text-shadow: var(--text-glow);
   }
 
   /* Typing animation */
@@ -117,32 +110,13 @@
     51%, 100% { opacity: 0; }
   }
 
-  @keyframes scanlines {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(4px); }
+  /* Subtle hover effects */
+  .professional-hover {
+    transition: all 0.2s ease-in-out;
   }
 
-  /* Cosmonaut specific animations */
-  @keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
+  .professional-hover:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px hsl(var(--primary) / 0.1);
   }
-
-  @keyframes rotate360 {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-  }
-
-  @keyframes pulse-glow {
-    0%, 100% { 
-      box-shadow: 0 0 5px hsl(var(--primary) / 0.5);
-    }
-    50% { 
-      box-shadow: 0 0 20px hsl(var(--primary) / 0.8), 0 0 30px hsl(var(--primary) / 0.4);
-    }
-  }
-
-  .float { animation: float 3s ease-in-out infinite; }
-  .rotate { animation: rotate360 20s linear infinite; }
-  .pulse-glow { animation: pulse-glow 2s ease-in-out infinite; }
 }
