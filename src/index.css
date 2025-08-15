@@ -2,70 +2,70 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Elegant Tech-Hacker CV Design System */
+/* Elegant Urban Tech CV Design System */
 
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Orbitron:wght@400;500;600;700;800;900&family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600&family=Manrope:wght@300;400;500;600;700;800&display=swap');
 
 @layer base {
   :root {
-    /* Elite Hacker Dark Terminal Theme */
-    --background: 0 0% 2%;
-    --foreground: 120 100% 85%;
+    /* Sophisticated Urban Dark Theme */
+    --background: 222 15% 3%;
+    --foreground: 220 8% 92%;
 
-    --card: 0 0% 4%;
-    --card-foreground: 120 100% 90%;
+    --card: 222 12% 5%;
+    --card-foreground: 220 8% 95%;
 
-    --popover: 0 0% 3%;
-    --popover-foreground: 120 100% 90%;
+    --popover: 222 15% 4%;
+    --popover-foreground: 220 8% 95%;
 
-    /* Matrix Green Primary */
-    --primary: 120 100% 50%;
-    --primary-foreground: 0 0% 0%;
-    --primary-glow: 120 100% 60%;
+    /* Steel Blue Primary - Professional & Sleek */
+    --primary: 215 25% 65%;
+    --primary-foreground: 222 15% 8%;
+    --primary-glow: 215 30% 75%;
 
-    /* Cyan Accent */
-    --secondary: 180 100% 50%;
-    --secondary-foreground: 0 0% 0%;
-    --secondary-glow: 180 100% 60%;
+    /* Warm Copper Secondary - Elegant Accent */
+    --secondary: 25 40% 60%;
+    --secondary-foreground: 222 15% 8%;
+    --secondary-glow: 25 45% 70%;
 
-    --muted: 0 0% 8%;
-    --muted-foreground: 120 50% 70%;
+    --muted: 222 10% 8%;
+    --muted-foreground: 220 8% 70%;
 
-    /* Electric Purple */
-    --accent: 280 100% 70%;
-    --accent-foreground: 0 0% 0%;
-    --accent-glow: 280 100% 80%;
+    /* Soft Purple Accent - Sophisticated Touch */
+    --accent: 260 20% 70%;
+    --accent-foreground: 222 15% 8%;
+    --accent-glow: 260 25% 80%;
 
-    /* Destructive Red */
-    --destructive: 0 100% 60%;
-    --destructive-foreground: 0 0% 0%;
+    /* Muted Red for Errors */
+    --destructive: 0 50% 60%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 120 50% 15%;
-    --input: 0 0% 6%;
-    --ring: 120 100% 50%;
+    --border: 220 8% 15%;
+    --input: 222 12% 6%;
+    --ring: 215 25% 65%;
 
-    --radius: 0.25rem;
+    --radius: 0.5rem;
 
-    /* Elite Hacker Colors */
-    --hacker-orange: 30 100% 60%;
-    --hacker-purple: 280 100% 70%;
-    --hacker-cyan: 180 100% 50%;
-    --hacker-yellow: 60 100% 60%;
-    --hacker-red: 0 100% 60%;
-    --hacker-blue: 220 100% 60%;
+    /* Urban Color Palette */
+    --urban-steel: 215 25% 65%;
+    --urban-copper: 25 40% 60%;
+    --urban-charcoal: 220 8% 25%;
+    --urban-slate: 220 8% 45%;
+    --urban-pearl: 220 8% 85%;
+    --urban-gold: 45 60% 70%;
     
-    /* Advanced Effects */
-    --terminal-glow: 0 0 20px hsl(var(--primary) / 0.3), 0 0 40px hsl(var(--primary) / 0.1);
-    --neon-glow: 0 0 5px currentColor, 0 0 10px currentColor, 0 0 15px currentColor;
-    --matrix-glow: 0 0 10px hsl(var(--primary) / 0.5), inset 0 0 10px hsl(var(--primary) / 0.1);
-    --cyber-shadow: 0 8px 32px hsl(var(--primary) / 0.12), 0 4px 16px hsl(var(--primary) / 0.08);
+    /* Refined Effects */
+    --elegant-glow: 0 2px 16px hsl(var(--primary) / 0.15), 0 0 0 1px hsl(var(--primary) / 0.1);
+    --subtle-glow: 0 0 20px hsl(var(--primary) / 0.08);
+    --urban-shadow: 0 8px 32px hsl(222 15% 1% / 0.4), 0 2px 8px hsl(222 15% 1% / 0.2);
+    --professional-shadow: 0 4px 24px hsl(222 15% 1% / 0.15), 0 2px 8px hsl(222 15% 1% / 0.1);
     
-    /* Elite Gradients */
-    --gradient-matrix: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));
-    --gradient-cyber: linear-gradient(45deg, hsl(var(--accent)), hsl(var(--hacker-purple)));
-    --gradient-terminal: linear-gradient(135deg, hsl(var(--background)), hsl(var(--muted)));
-    --gradient-neon: linear-gradient(90deg, hsl(var(--primary)), hsl(var(--secondary)), hsl(var(--accent)));
-    --gradient-scan: linear-gradient(180deg, transparent, hsl(var(--primary) / 0.1), transparent);
+    /* Sophisticated Gradients */
+    --gradient-elegant: linear-gradient(135deg, hsl(var(--card)), hsl(var(--muted)));
+    --gradient-urban: linear-gradient(135deg, hsl(var(--primary) / 0.05), hsl(var(--accent) / 0.05));
+    --gradient-professional: linear-gradient(180deg, hsl(var(--card)), hsl(var(--background)));
+    --gradient-accent: linear-gradient(90deg, hsl(var(--primary) / 0.1), hsl(var(--secondary) / 0.1));
+    --gradient-border: linear-gradient(135deg, hsl(var(--primary) / 0.3), hsl(var(--accent) / 0.2));
 
     --radius: 0.25rem;
 
@@ -99,15 +99,15 @@
   }
 
   body {
-    @apply bg-background text-foreground font-mono;
+    @apply bg-background text-foreground;
+    font-family: 'Inter', 'JetBrains Mono', sans-serif;
     background-image: 
-      radial-gradient(circle at 20% 80%, hsl(var(--primary) / 0.05) 0%, transparent 50%),
-      radial-gradient(circle at 80% 20%, hsl(var(--accent) / 0.05) 0%, transparent 50%),
-      radial-gradient(circle at 40% 40%, hsl(var(--secondary) / 0.03) 0%, transparent 50%);
+      radial-gradient(circle at 20% 80%, hsl(var(--primary) / 0.02) 0%, transparent 70%),
+      radial-gradient(circle at 80% 20%, hsl(var(--accent) / 0.02) 0%, transparent 70%);
     position: relative;
   }
 
-  /* Matrix background effect */
+  /* Subtle grid pattern */
   body::before {
     content: '';
     position: fixed;
@@ -116,79 +116,84 @@
     width: 100%;
     height: 100%;
     background: 
-      linear-gradient(90deg, transparent 79px, hsl(var(--primary) / 0.03) 81px, hsl(var(--primary) / 0.03) 82px, transparent 84px),
-      linear-gradient(hsl(var(--primary) / 0.03) 0.5px, transparent 0.5px);
-    background-size: 84px 84px, 84px 84px;
+      linear-gradient(90deg, transparent 39px, hsl(var(--border) / 0.4) 40px, hsl(var(--border) / 0.4) 40px, transparent 41px),
+      linear-gradient(hsl(var(--border) / 0.4) 0.5px, transparent 0.5px);
+    background-size: 40px 40px, 40px 40px;
     pointer-events: none;
     z-index: -1;
+    opacity: 0.3;
   }
 
-  /* Elite terminal glow effects */
-  .terminal-glow {
-    box-shadow: var(--terminal-glow);
-    border: 1px solid hsl(var(--primary) / 0.3);
+  /* Elegant container effects */
+  .elegant-container {
+    box-shadow: var(--elegant-glow);
+    border: 1px solid hsl(var(--border));
     position: relative;
+    backdrop-filter: blur(8px);
+    background: hsl(var(--card) / 0.8);
   }
 
-  .terminal-glow::before {
+  .elegant-container::before {
     content: '';
     position: absolute;
-    top: -1px;
-    left: -1px;
-    right: -1px;
-    bottom: -1px;
-    background: var(--gradient-neon);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--gradient-border);
     border-radius: inherit;
     z-index: -1;
-    opacity: 0.1;
-    animation: neon-pulse 2s ease-in-out infinite alternate;
+    opacity: 0.6;
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: xor;
+    padding: 1px;
   }
 
-  /* Advanced typing animation with neon cursor */
+  /* Elegant typing animation with subtle cursor */
   .typing::after {
     content: '█';
     color: hsl(var(--primary));
-    animation: neon-blink 1s infinite, neon-glow 1s infinite;
-    text-shadow: var(--neon-glow);
+    animation: subtle-blink 1.5s ease-in-out infinite;
+    opacity: 0.8;
   }
 
-  /* Elite hover effects */
-  .hacker-hover {
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  /* Sophisticated hover effects */
+  .urban-hover {
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     position: relative;
     overflow: hidden;
   }
 
-  .hacker-hover::before {
+  .urban-hover::before {
     content: '';
     position: absolute;
     top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: var(--gradient-scan);
-    transition: left 0.5s;
-    z-index: 1;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--gradient-accent);
+    transform: translateX(-100%);
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    z-index: -1;
   }
 
-  .hacker-hover:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--cyber-shadow);
-    border-color: hsl(var(--primary) / 0.6);
+  .urban-hover:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--professional-shadow);
+    border-color: hsl(var(--primary) / 0.4);
   }
 
-  .hacker-hover:hover::before {
-    left: 100%;
+  .urban-hover:hover::before {
+    transform: translateX(0);
   }
 
-  /* Neon text effects */
-  .neon-text {
-    text-shadow: 
-      0 0 5px currentColor,
-      0 0 10px currentColor,
-      0 0 15px currentColor,
-      0 0 20px currentColor;
-    animation: neon-flicker 3s linear infinite;
+  /* Elegant accent text */
+  .accent-text {
+    background: var(--gradient-accent);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
   }
 
   /* Glitch text effect */
@@ -253,25 +258,25 @@
     background-size: 20px 20px;
   }
 
-  /* Advanced animations */
-  @keyframes neon-blink {
-    0%, 50% { opacity: 1; }
-    51%, 100% { opacity: 0.3; }
+  /* Sophisticated animations */
+  @keyframes subtle-blink {
+    0%, 70% { opacity: 1; }
+    71%, 100% { opacity: 0.4; }
   }
 
-  @keyframes neon-glow {
-    0%, 100% { text-shadow: 0 0 5px currentColor, 0 0 10px currentColor; }
-    50% { text-shadow: 0 0 2px currentColor, 0 0 5px currentColor, 0 0 8px currentColor; }
+  @keyframes elegant-glow {
+    0%, 100% { opacity: 0.8; }
+    50% { opacity: 1; }
   }
 
-  @keyframes neon-pulse {
-    0% { opacity: 0.1; }
-    100% { opacity: 0.3; }
+  @keyframes professional-pulse {
+    0% { opacity: 0.4; }
+    100% { opacity: 0.8; }
   }
 
-  @keyframes neon-flicker {
-    0%, 98%, 100% { opacity: 1; }
-    99% { opacity: 0.8; }
+  @keyframes refined-flicker {
+    0%, 96%, 100% { opacity: 1; }
+    97%, 99% { opacity: 0.9; }
   }
 
   @keyframes glitch-1 {
