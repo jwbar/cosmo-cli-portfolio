@@ -41,16 +41,57 @@ const Index = () => {
 
   if (currentSection === 'boot') {
     return (
-      <div className="min-h-screen bg-background flex items-center justify-center">
-        <div className="text-center space-y-4">
-          <div className="text-secondary font-mono">
-            <TypeWriter 
-              text="Initializing cosmic interface..."
-              speed={50}
-            />
+      <div className="min-h-screen bg-background flex items-center justify-center relative overflow-hidden">
+        {/* Matrix rain background */}
+        <div className="absolute inset-0">
+          {Array.from({ length: 20 }).map((_, i) => (
+            <div
+              key={i}
+              className="matrix-rain absolute text-xs opacity-30"
+              style={{
+                left: `${Math.random() * 100}%`,
+                animationDelay: `${Math.random() * 3}s`,
+                animationDuration: `${3 + Math.random() * 2}s`
+              }}
+            >
+              {Array.from({ length: 10 }).map((_, j) => (
+                <div key={j} className="mb-1">
+                  {String.fromCharCode(0x30a0 + Math.random() * 96)}
+                </div>
+              ))}
+            </div>
+          ))}
+        </div>
+        
+        <div className="text-center space-y-6 z-10 animate-terminal-boot">
+          <div className="space-y-2">
+            <div className="text-primary font-code text-lg neon-text">
+              <TypeWriter 
+                text="INITIALIZING HACKER TERMINAL v2.1.337..."
+                speed={30}
+              />
+            </div>
+            <div className="text-secondary font-mono text-sm">
+              <TypeWriter 
+                text="[████████████████████████████████] 100%"
+                speed={20}
+                delay={2000}
+              />
+            </div>
           </div>
-          <div className="flex justify-center">
-            <div className="w-8 h-8 border-2 border-primary border-t-transparent rounded-full animate-spin"></div>
+          
+          <div className="flex justify-center items-center space-x-3">
+            <div className="w-2 h-2 bg-primary rounded-full animate-neon-pulse"></div>
+            <div className="w-2 h-2 bg-secondary rounded-full animate-neon-pulse" style={{ animationDelay: '0.3s' }}></div>
+            <div className="w-2 h-2 bg-accent rounded-full animate-neon-pulse" style={{ animationDelay: '0.6s' }}></div>
+          </div>
+          
+          <div className="text-primary/70 font-mono text-xs">
+            <TypeWriter 
+              text="Connecting to neural matrix..."
+              speed={40}
+              delay={3500}
+            />
           </div>
         </div>
       </div>
@@ -60,62 +101,84 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background relative overflow-hidden">
 
-      {/* Header */}
-      <header className="fixed top-0 w-full bg-background/80 backdrop-blur-sm border-b border-border z-50">
+      {/* Elite Hacker Header */}
+      <header className="fixed top-0 w-full bg-background/90 backdrop-blur-md border-b border-primary/20 z-50 hacker-hover">
         <div className="container mx-auto px-6 py-4 flex items-center justify-between">
-          <div className="flex items-center space-x-2">
-            <Terminal className="text-primary" size={24} />
-            <span className="font-mono text-primary">~/jay.cv</span>
+          <div className="flex items-center space-x-3">
+            <Terminal className="text-primary animate-neon-pulse" size={24} />
+            <span className="font-code text-primary neon-text">
+              <span className="text-secondary">[</span>
+              ~/jay.cv
+              <span className="text-secondary">]</span>
+            </span>
           </div>
           <LanguageSwitcher 
             currentLanguage={currentLanguage}
             onLanguageChange={setCurrentLanguage}
           />
         </div>
+        
+        {/* Header scan line */}
+        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-neon opacity-30"></div>
       </header>
 
       <main className="pt-20 pb-10">
         <div className="container mx-auto px-6 space-y-16">
           
-          {/* Hero Section */}
-          <section className="text-center py-16">
-            <TerminalWindow title="profile.sh" className="max-w-4xl mx-auto">
+          {/* Elite Hero Section */}
+          <section className="text-center py-16 relative">
+            <TerminalWindow title="./execute_profile.sh" className="max-w-5xl mx-auto">
               <div className="flex flex-col md:flex-row items-center gap-8">
-                <div className="flex-shrink-0">
-                  <div className="relative">
+                <div className="flex-shrink-0 relative">
+                  <div className="relative group">
                     <img
                       src="/lovable-uploads/ec5f9a66-2521-496f-a030-a5f26e0fb057.png"
                       alt="Jay William Barros"
-                      className="w-48 h-48 rounded-full border-2 border-primary/50 object-cover professional-hover"
+                      className="w-48 h-48 rounded-full border-2 border-primary/50 object-cover hacker-hover shadow-[0_0_20px_hsl(var(--primary)/0.3)] animate-float"
                     />
+                    {/* Orbital rings */}
+                    <div className="absolute inset-0 rounded-full border border-secondary/30 animate-spin" style={{ animationDuration: '20s' }}></div>
+                    <div className="absolute inset-2 rounded-full border border-accent/20 animate-spin" style={{ animationDuration: '15s', animationDirection: 'reverse' }}></div>
                   </div>
                 </div>
                 
-                <div className="flex-1 text-left">
-                  <TypeWriter
-                    text={`$ whoami`}
-                    className="text-secondary text-sm font-mono block mb-2"
-                    speed={80}
-                    delay={500}
-                  />
-                  <h1 className="text-4xl md:text-6xl font-display font-bold text-gradient bg-gradient-cosmic bg-clip-text text-transparent mb-4">
+                <div className="flex-1 text-left space-y-4">
+                  <div className="space-y-2">
+                    <TypeWriter
+                      text="$ sudo whoami"
+                      className="text-secondary text-sm font-code block neon-text"
+                      speed={60}
+                      delay={500}
+                    />
+                    <TypeWriter
+                      text="> jay.barros@hacker-terminal:~#"
+                      className="text-primary/70 text-xs font-mono block"
+                      speed={40}
+                      delay={1500}
+                    />
+                  </div>
+                  
+                  <h1 className="text-4xl md:text-6xl font-display font-bold bg-gradient-matrix bg-clip-text text-transparent mb-4 glitch-text" data-text={t('header.title')}>
                     {t('header.title')}
                   </h1>
+                  
                   <TypeWriter
                     text={t('header.subtitle')}
-                    className="text-lg md:text-xl text-muted-foreground font-mono"
-                    speed={30}
-                    delay={2000}
+                    className="text-lg md:text-xl text-foreground font-mono neon-text"
+                    speed={25}
+                    delay={2500}
                   />
                   
-                  <div className="mt-6 flex flex-wrap gap-3">
-                    <Button className="bg-gradient-matrix hover:bg-secondary/90 text-secondary-foreground font-mono">
-                      <Camera className="w-4 h-4 mr-2" />
-                      {t('portfolio.button')}
+                  <div className="mt-8 flex flex-wrap gap-4">
+                    <Button className="bg-gradient-matrix text-black font-code relative overflow-hidden group hacker-hover">
+                      <div className="absolute inset-0 bg-gradient-cyber opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      <Camera className="w-4 h-4 mr-2 relative z-10" />
+                      <span className="relative z-10">{t('portfolio.button')}</span>
                     </Button>
-                    <Button variant="outline" className="border-primary text-primary hover:bg-primary/10 font-mono">
-                      <Globe className="w-4 h-4 mr-2" />
-                      jay@wil.bar
+                    <Button variant="outline" className="border-primary text-primary hover:bg-primary/10 font-code relative overflow-hidden group">
+                      <div className="absolute inset-0 bg-primary/5 scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></div>
+                      <Globe className="w-4 h-4 mr-2 relative z-10" />
+                      <span className="relative z-10">jay@wil.bar</span>
                     </Button>
                   </div>
                 </div>
@@ -123,48 +186,89 @@ const Index = () => {
             </TerminalWindow>
           </section>
 
-          {/* About Section */}
+          {/* Elite About Section */}
           <section>
-            <TerminalWindow title="about.py" className="max-w-4xl mx-auto">
-              <div className="space-y-6">
+            <TerminalWindow title="./about_hacker.py" className="max-w-5xl mx-auto">
+              <div className="space-y-8">
+                <div className="flex items-center space-x-3">
+                  <span className="text-secondary font-code">#!/usr/bin/env python3</span>
+                </div>
+                
                 <TypeWriter
-                  text={`# ${t('about.title')}`}
-                  className="text-accent text-2xl font-display font-bold"
+                  text={`class ${t('about.title').replace(' ', '')} {`}
+                  className="text-accent text-2xl font-display font-bold neon-text"
                   speed={50}
                   delay={300}
                 />
                 
-                <div className="space-y-4 text-foreground font-mono leading-relaxed">
-                  <p>{t('about.intro')}</p>
-                  <p>{t('about.skills')}</p>
+                <div className="space-y-6 text-foreground font-code leading-relaxed pl-4 border-l-2 border-primary/30">
+                  <div className="space-y-3">
+                    <TypeWriter
+                      text="def initialize_developer(self):"
+                      className="text-hacker-cyan font-code"
+                      speed={40}
+                      delay={1000}
+                    />
+                    <div className="pl-6 space-y-2">
+                      <p className="text-muted-foreground">
+                        <span className="text-secondary">"""</span>
+                        {t('about.intro')}
+                        <span className="text-secondary">"""</span>
+                      </p>
+                    </div>
+                  </div>
+                  
+                  <div className="space-y-3">
+                    <TypeWriter
+                      text="def get_expertise(self):"
+                      className="text-hacker-cyan font-code"
+                      speed={40}
+                      delay={2500}
+                    />
+                    <div className="pl-6">
+                      <p className="text-muted-foreground">
+                        <span className="text-hacker-yellow">return</span> <span className="text-secondary">"</span>{t('about.skills')}<span className="text-secondary">"</span>
+                      </p>
+                    </div>
+                  </div>
                 </div>
+                
+                <TypeWriter
+                  text="}"
+                  className="text-accent text-2xl font-display font-bold"
+                  speed={50}
+                  delay={4000}
+                />
               </div>
             </TerminalWindow>
           </section>
 
-          {/* Skills Section */}
+          {/* Elite Skills Matrix */}
           <section>
-            <TerminalWindow title="skills.json" className="max-w-4xl mx-auto">
-              <div className="space-y-6">
-                <TypeWriter
-                  text={`// ${t('skills.title')}`}
-                  className="text-accent text-2xl font-display font-bold"
-                  speed={50}
-                  delay={200}
-                />
+            <TerminalWindow title="./skills_matrix.json" className="max-w-6xl mx-auto">
+              <div className="space-y-8">
+                <div className="flex items-center space-x-3">
+                  <TypeWriter
+                    text={`{ "${t('skills.title').toLowerCase()}": {`}
+                    className="text-accent text-2xl font-display font-bold neon-text"
+                    speed={50}
+                    delay={200}
+                  />
+                </div>
                 
-                <div className="grid md:grid-cols-2 gap-6">
-                  <Card className="bg-muted/50 border-primary/30 p-6">
-                    <div className="flex items-center gap-2 mb-4">
-                      <Code2 className="text-primary" size={20} />
-                      <h3 className="font-mono text-lg font-semibold">{t('skills.languages')}</h3>
+                <div className="grid md:grid-cols-2 gap-8 pl-4">
+                  <Card className="bg-muted/50 border-primary/30 p-6 hacker-hover relative overflow-hidden group">
+                    <div className="absolute inset-0 bg-gradient-matrix opacity-5 group-hover:opacity-10 transition-opacity duration-500"></div>
+                    <div className="flex items-center gap-3 mb-6 relative z-10">
+                      <Code2 className="text-primary animate-neon-pulse" size={24} />
+                      <h3 className="font-code text-lg font-semibold neon-text">{t('skills.languages')}</h3>
                     </div>
-                    <div className="flex flex-wrap gap-2">
+                    <div className="flex flex-wrap gap-3 relative z-10">
                        {skills.languages.map((skill, index) => (
                          <Badge 
                            key={skill} 
-                           variant="secondary" 
-                           className="font-mono"
+                           className="font-code bg-primary/20 text-primary border-primary/50 hover:bg-primary/30 transition-all duration-300 hover:shadow-[0_0_10px_currentColor]"
+                           style={{ animationDelay: `${index * 100}ms` }}
                          >
                            {skill}
                          </Badge>
@@ -172,17 +276,18 @@ const Index = () => {
                     </div>
                   </Card>
 
-                  <Card className="bg-muted/50 border-accent/30 p-6">
-                    <div className="flex items-center gap-2 mb-4">
-                      <Cpu className="text-accent" size={20} />
-                      <h3 className="font-mono text-lg font-semibold">{t('skills.frameworks')}</h3>
+                  <Card className="bg-muted/50 border-accent/30 p-6 hacker-hover relative overflow-hidden group">
+                    <div className="absolute inset-0 bg-gradient-cyber opacity-5 group-hover:opacity-10 transition-opacity duration-500"></div>
+                    <div className="flex items-center gap-3 mb-6 relative z-10">
+                      <Cpu className="text-accent animate-neon-pulse" size={24} />
+                      <h3 className="font-code text-lg font-semibold neon-text">{t('skills.frameworks')}</h3>
                     </div>
-                    <div className="flex flex-wrap gap-2">
+                    <div className="flex flex-wrap gap-3 relative z-10">
                        {skills.frameworks.map((skill, index) => (
                          <Badge 
                            key={skill} 
-                           variant="outline" 
-                           className="font-mono border-accent/50"
+                           className="font-code bg-accent/20 text-accent border-accent/50 hover:bg-accent/30 transition-all duration-300 hover:shadow-[0_0_10px_currentColor]"
+                           style={{ animationDelay: `${index * 100}ms` }}
                          >
                            {skill}
                          </Badge>
@@ -190,17 +295,18 @@ const Index = () => {
                     </div>
                   </Card>
 
-                   <Card className="bg-muted/50 border-professional-cyan/30 p-6 professional-hover">
-                     <div className="flex items-center gap-2 mb-4">
-                       <Database className="text-professional-cyan" size={20} />
-                       <h3 className="font-mono text-lg font-semibold">{t('skills.databases')}</h3>
+                   <Card className="bg-muted/50 border-secondary/30 p-6 hacker-hover relative overflow-hidden group">
+                     <div className="absolute inset-0 bg-gradient-neon opacity-5 group-hover:opacity-10 transition-opacity duration-500"></div>
+                     <div className="flex items-center gap-3 mb-6 relative z-10">
+                       <Database className="text-secondary animate-neon-pulse" size={24} />
+                       <h3 className="font-code text-lg font-semibold neon-text">{t('skills.databases')}</h3>
                      </div>
-                     <div className="flex flex-wrap gap-2">
+                     <div className="flex flex-wrap gap-3 relative z-10">
                        {skills.databases.map((skill, index) => (
                          <Badge 
                            key={skill} 
-                           variant="secondary" 
-                           className="font-mono"
+                           className="font-code bg-secondary/20 text-secondary border-secondary/50 hover:bg-secondary/30 transition-all duration-300 hover:shadow-[0_0_10px_currentColor]"
+                           style={{ animationDelay: `${index * 100}ms` }}
                          >
                            {skill}
                          </Badge>
@@ -208,17 +314,18 @@ const Index = () => {
                      </div>
                    </Card>
 
-                   <Card className="bg-muted/50 border-professional-orange/30 p-6 professional-hover">
-                     <div className="flex items-center gap-2 mb-4">
-                       <Monitor className="text-professional-orange" size={20} />
-                       <h3 className="font-mono text-lg font-semibold">Tools & Platforms</h3>
+                   <Card className="bg-muted/50 border-hacker-orange/30 p-6 hacker-hover relative overflow-hidden group">
+                     <div className="absolute inset-0 bg-gradient-scan opacity-5 group-hover:opacity-10 transition-opacity duration-500"></div>
+                     <div className="flex items-center gap-3 mb-6 relative z-10">
+                       <Monitor className="text-hacker-orange animate-neon-pulse" size={24} />
+                       <h3 className="font-code text-lg font-semibold neon-text">Tools & Platforms</h3>
                      </div>
-                     <div className="flex flex-wrap gap-2">
+                     <div className="flex flex-wrap gap-3 relative z-10">
                        {skills.tools.map((skill, index) => (
                          <Badge 
                            key={skill} 
-                           variant="outline" 
-                           className="font-mono border-professional-orange/50"
+                           className="font-code bg-hacker-orange/20 text-hacker-orange border-hacker-orange/50 hover:bg-hacker-orange/30 transition-all duration-300 hover:shadow-[0_0_10px_currentColor]"
+                           style={{ animationDelay: `${index * 100}ms` }}
                          >
                            {skill}
                          </Badge>
@@ -226,6 +333,13 @@ const Index = () => {
                      </div>
                    </Card>
                 </div>
+                
+                <TypeWriter
+                  text="} }"
+                  className="text-accent text-2xl font-display font-bold"
+                  speed={50}
+                  delay={3000}
+                />
               </div>
             </TerminalWindow>
           </section>
