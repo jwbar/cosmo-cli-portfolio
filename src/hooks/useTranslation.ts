@@ -17,9 +17,9 @@ const translations: Translations = {
     es: 'Jay William Barros'
   },
   'header.subtitle': {
-    en: 'Programmer, Hydro Farmer, Funds Recovery Agent, & Multidisciplinary Creator',
-    de: 'Programmierer, Hydro-Farmer, Funds Recovery Agent & Multidisziplinärer Kreativer',
-    es: 'Programador, Agricultor Hidropónico, Agente de Recuperación de Fondos y Creador Multidisciplinario'
+    en: 'Full Stack Developer, Hydro Farmer, & Multidisciplinary Creator',
+    de: 'Full Stack Entwickler, Hydro-Farmer & Multidisziplinärer Kreativer', 
+    es: 'Desarrollador Full Stack, Agricultor Hidropónico y Creador Multidisciplinario'
   },
   
   // About

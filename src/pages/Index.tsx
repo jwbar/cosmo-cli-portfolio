@@ -41,7 +41,9 @@ const Index = () => {
 
   if (currentSection === 'boot') {
     return (
-      <div className="min-h-screen bg-background flex items-center justify-center relative overflow-hidden">
+      <div className="min-h-screen cosmic-bg flex items-center justify-center relative overflow-hidden">
+        {/* Cosmic starfield */}
+        <div className="starfield"></div>
         {/* Matrix rain background */}
         <div className="absolute inset-0">
           {Array.from({ length: 20 }).map((_, i) => (
@@ -67,7 +69,7 @@ const Index = () => {
           <div className="space-y-2">
             <div className="text-primary font-code text-lg neon-text">
               <TypeWriter 
-                text="INITIALIZING HACKER TERMINAL v2.1.337..."
+                text="INITIALIZING DEVELOPER TERMINAL v2.1.337..."
                 speed={30}
               />
             </div>
@@ -99,9 +101,11 @@ const Index = () => {
   }
 
   return (
-    <div className="min-h-screen bg-background relative overflow-hidden">
+    <div className="min-h-screen cosmic-bg relative overflow-hidden">
+      {/* Cosmic starfield */}
+      <div className="starfield"></div>
 
-      {/* Elite Hacker Header */}
+      {/* Elite Developer Header */}
       <header className="fixed top-0 w-full bg-background/90 backdrop-blur-md border-b border-primary/20 z-50 hacker-hover">
         <div className="container mx-auto px-6 py-4 flex items-center justify-between">
           <div className="flex items-center space-x-3">
@@ -188,7 +192,7 @@ const Index = () => {
 
           {/* Elite About Section */}
           <section>
-            <TerminalWindow title="./about_hacker.py" className="max-w-5xl mx-auto">
+            <TerminalWindow title="./about_developer.py" className="max-w-5xl mx-auto">
               <div className="space-y-8">
                 <div className="flex items-center space-x-3">
                   <span className="text-secondary font-code">#!/usr/bin/env python3</span>
@@ -204,7 +208,7 @@ const Index = () => {
                 <div className="space-y-6 text-foreground font-code leading-relaxed pl-4 border-l-2 border-primary/30">
                   <div className="space-y-3">
                     <TypeWriter
-                      text="def initialize_developer(self):"
+                      text="def initialize_profile(self):"
                       className="text-hacker-cyan font-code"
                       speed={40}
                       delay={1000}
