@@ -106,7 +106,7 @@
 
   /* Cosmic Background */
   .cosmic-bg {
-    background: url('/src/assets/cosmic-background.jpg') center/cover no-repeat,
+    background: url('/src/assets/cosmic-background.jpg') center/contain no-repeat fixed,
       radial-gradient(ellipse at 20% 50%, hsla(226, 70%, 55%, 0.1) 0%, transparent 60%),
       radial-gradient(ellipse at 80% 20%, hsla(280, 100%, 70%, 0.08) 0%, transparent 50%),
       linear-gradient(135deg, 
