@@ -106,12 +106,9 @@
 
   /* Cosmic Background */
   .cosmic-bg {
-    background: 
-      radial-gradient(ellipse at 20% 50%, hsla(226, 70%, 55%, 0.15) 0%, transparent 60%),
-      radial-gradient(ellipse at 80% 20%, hsla(280, 100%, 70%, 0.1) 0%, transparent 50%),
-      radial-gradient(ellipse at 40% 80%, hsla(200, 100%, 80%, 0.08) 0%, transparent 50%),
-      radial-gradient(circle at 10% 20%, hsla(220, 70%, 50%, 0.1) 0%, transparent 40%),
-      radial-gradient(circle at 90% 80%, hsla(270, 80%, 60%, 0.1) 0%, transparent 40%),
+    background: url('/src/assets/cosmic-background.jpg') center/cover no-repeat,
+      radial-gradient(ellipse at 20% 50%, hsla(226, 70%, 55%, 0.1) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 20%, hsla(280, 100%, 70%, 0.08) 0%, transparent 50%),
       linear-gradient(135deg, 
         hsl(220, 13%, 8%) 0%,
         hsl(225, 15%, 12%) 20%,
@@ -120,6 +117,49 @@
         hsl(240, 22%, 20%) 80%,
         hsl(245, 25%, 22%) 100%
       );
+  }
+
+  /* macOS Terminal Styling */
+  .macos-terminal-window {
+    @apply bg-black/80 backdrop-blur-xl border border-white/10 rounded-xl overflow-hidden;
+    box-shadow: 
+      0 25px 50px -12px rgba(0, 0, 0, 0.8),
+      0 0 0 1px rgba(255, 255, 255, 0.05),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+
+  .macos-terminal-header {
+    @apply px-6 py-4 flex items-center justify-between;
+    background: linear-gradient(180deg, rgba(40, 40, 40, 0.9) 0%, rgba(30, 30, 30, 0.9) 100%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .macos-traffic-light {
+    @apply w-3 h-3 rounded-full;
+    transition: all 0.2s ease;
+  }
+
+  .macos-close {
+    background: linear-gradient(135deg, #ff5f57 0%, #ff4444 100%);
+  }
+
+  .macos-minimize {
+    background: linear-gradient(135deg, #ffbd2e 0%, #ffaa00 100%);
+  }
+
+  .macos-maximize {
+    background: linear-gradient(135deg, #28ca42 0%, #20aa35 100%);
+  }
+
+  .macos-traffic-light:hover {
+    @apply scale-110;
+    filter: brightness(1.1);
+  }
+
+  .macos-terminal-content {
+    @apply p-8 relative;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(8px);
   }
 
   /* Starfield Animation */
