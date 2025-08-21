@@ -56,6 +56,12 @@
     --urban-pearl: 220 8% 85%;
     --urban-gold: 45 60% 70%;
     
+    /* Hacker Theme Colors */
+    --hacker-red: 0 100% 70%;
+    --hacker-cyan: 180 100% 70%;
+    --hacker-yellow: 60 100% 70%;
+    --hacker-orange: 30 100% 70%;
+    
     /* Refined Effects */
     --elegant-glow: 0 2px 16px hsl(var(--primary) / 0.15), 0 0 0 1px hsl(var(--primary) / 0.1);
     --subtle-glow: 0 0 20px hsl(var(--primary) / 0.08);
@@ -68,6 +74,10 @@
     --gradient-professional: linear-gradient(180deg, hsl(var(--card)), hsl(var(--background)));
     --gradient-accent: linear-gradient(90deg, hsl(var(--primary) / 0.1), hsl(var(--secondary) / 0.1));
     --gradient-border: linear-gradient(135deg, hsl(var(--primary) / 0.3), hsl(var(--accent) / 0.2));
+    --gradient-matrix: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));
+    --gradient-cyber: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--primary)));
+    --gradient-neon: linear-gradient(90deg, hsl(var(--primary)), hsl(var(--accent)), hsl(var(--secondary)));
+    --gradient-scan: linear-gradient(45deg, hsl(var(--secondary)), hsl(var(--accent)));
 
     --radius: 0.25rem;
 
@@ -406,5 +416,93 @@
   @keyframes sparkle {
     0% { transform: translateY(0); }
     100% { transform: translateY(-100px); }
+  }
+
+  /* Utility Classes */
+  .neon-text {
+    text-shadow: 0 0 5px hsl(var(--primary) / 0.5), 0 0 10px hsl(var(--primary) / 0.3);
+  }
+
+  .bg-gradient-matrix {
+    background: var(--gradient-matrix);
+  }
+
+  .font-code {
+    font-family: 'JetBrains Mono', 'Source Code Pro', monospace;
+  }
+
+  .font-display {
+    font-family: 'Manrope', 'Inter', sans-serif;
+  }
+
+  .hacker-hover {
+    transition: all 0.3s ease;
+  }
+
+  .hacker-hover:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.1);
+  }
+
+  /* Animations */
+  .animate-terminal-boot {
+    animation: terminal-boot 1s ease-out;
+  }
+
+  .animate-neon-pulse {
+    animation: neon-pulse 2s ease-in-out infinite;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes terminal-boot {
+    0% { opacity: 0; transform: scale(0.9); }
+    100% { opacity: 1; transform: scale(1); }
+  }
+
+  @keyframes neon-pulse {
+    0%, 100% { opacity: 0.8; }
+    50% { opacity: 1; filter: brightness(1.2); }
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+
+  /* Color classes for hacker theme */
+  .text-hacker-cyan { color: hsl(var(--hacker-cyan)); }
+  .text-hacker-yellow { color: hsl(var(--hacker-yellow)); }
+  .text-hacker-orange { color: hsl(var(--hacker-orange)); }
+}
+
+@layer components {
+  /* Background gradients */
+  .bg-gradient-cyber {
+    background: var(--gradient-cyber);
+  }
+
+  .bg-gradient-cosmic {
+    background: var(--gradient-matrix);
+  }
+
+  /* Terminal effects */
+  .terminal-glow {
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.2);
+  }
+
+  .pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% { 
+      box-shadow: 0 0 5px hsl(var(--primary) / 0.5);
+    }
+    50% { 
+      box-shadow: 0 0 20px hsl(var(--primary) / 0.8), 0 0 30px hsl(var(--primary) / 0.4);
+    }
   }
 }
